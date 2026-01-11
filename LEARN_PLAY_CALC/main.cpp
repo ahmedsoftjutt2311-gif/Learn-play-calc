@@ -105,19 +105,28 @@ while(getline(FILE,line)){
 }
 void rps_game(){
     system("cls");
-    int  user_move,comp_move;
-    int userscore=0,compscore=0;
-    cout<<"Welcome to rock paper scissor  world u will have 5 moves against computer the one with highest score win "<<endl;
+    char u1[20];
+    char u2[20];
+    int  user1_move,user2_move;
+    int users1core=0,user2score=0;
+    cout<<"Enter player  1 name : "<<endl;
+    cin.getline(u1,20);
+        cout<<"Enter player  2 name : "<<endl;
+    cin.getline(u2,20);
+    cout<<"Welcome to rock paper scissor  world u will have 5 moves against each other the one with highest score win "<<endl;
     for(int i=0;i<5;i++){
-        cout<<"\n Make your move: '1' for rock '2' for scissor '3' for paper ";
-        cin>>user_move;
-        comp_move=rand()%3 + 1;
-        if((user_move==1 && comp_move==2)||(user_move==2 && comp_move==3)||(user_move==3 && comp_move==1) ){
-        cout<<"good move "<<endl;
-        userscore++;
-        }else if((comp_move==1 && user_move==2)||(comp_move==2 && user_move==3)||(comp_move==3 && user_move==1)){
-        cout<<"Ops ";
-        compscore++;
+        cout<<"\n "<<u1<<" Make your move: '1' for rock '2' for scissor '3' for paper ";
+        cin>>user1_move;
+         cout<<"\n "<<u2<<" Make your move: '1' for rock '2' for scissor '3' for paper ";
+        cin>>user2_move;
+       
+        if((user1_move==1 && user2_move==2)||(user1_move==2 && user2_move==3)||(user1_move==3 && user2_move==1) ){
+      
+          cout<<u1<<" good move "<<endl;
+        user1score++;
+        }else if((user2_move==1 && user1_move==2)||(user2_move==2 && user1_move==3)||(user2_move==3 && user1_move==1)){
+        cout<<u2<<" Good move ";
+        user2score++;
         }
         else if((comp_move==1 && user_move==1)||(comp_move==2 && user_move==2)||(comp_move==3 && user_move==13)){
             cout<<"tie"<<endl;
@@ -125,9 +134,9 @@ void rps_game(){
         else{
             cout<<"invalid move";
         }
-        if(userscore>=3){
+        if(user1score>=3){
             cout<<"Congratulation u win "<<endl;
-        }else if(compscore>=3){
+        }else if(user2score>=3){
         cout<<"Computer win u loose";
         }
 }
@@ -342,4 +351,5 @@ cin>>choice;
 cout<<"Thank You for using my application "<<endl;
 
     return 0;}
+
 
