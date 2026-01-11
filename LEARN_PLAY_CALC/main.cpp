@@ -103,44 +103,65 @@ while(getline(FILE,line)){
 }
 
 }
-void rps_game(){
+#include <iostream>
+using namespace std;
+
+#include <iostream>
+#include <conio.h> // For getch()
+using namespace std;
+
+void rps_game() {
     system("cls");
-    char u1[20];
-    char u2[20];
-    int  user1_move,user2_move;
-    int user1score=0,user2score=0;
-    cout<<"Enter player  1 name : "<<endl;
-    cin.getline(u1,20);
-        cout<<"Enter player  2 name : "<<endl;
-    cin.getline(u2,20);
-    cout<<"Welcome to rock paper scissor  world u will have 5 moves against each other the one with highest score win "<<endl;
-    for(int i=0;i<5;i++){
-        cout<<"\n "<<u1<<" Make your move: '1' for rock '2' for scissor '3' for paper ";
-        cin>>user1_move;
-         cout<<"\n "<<u2<<" Make your move: '1' for rock '2' for scissor '3' for paper ";
-        cin>>user2_move;
+    char u1[20], u2[20];
+    int user1_move = 0, user2_move = 0;
+    int user1score = 0, user2score = 0;
 
-        if((user1_move==1 && user2_move==2)||(user1_move==2 && user2_move==3)||(user1_move==3 && user2_move==1) ){
+    cin.ignore(); // Clear buffer
+    cout << "Enter player 1 name: ";
+    cin.getline(u1, 20);
+    cout << "Enter player 2 name: ";
+    cin.getline(u2, 20);
 
-          cout<<u1<<" good move "<<endl;
-        user1score++;
-        }else if((user2_move==1 && user1_move==2)||(user2_move==2 && user1_move==3)||(user2_move==3 && user1_move==1)){
-        cout<<u2<<" Good move ";
-        user2score++;
+    cout << "Welcome " << u1 << " and " << u2 << " to Rock Paper Scissors!\n";
+
+    for (int i = 0; i < 5; i++) {
+
+        cout << "\n" << u1 << ", make your move (1=Rock, 2=Scissors, 3=Paper): ";
+        user1_move = _getch() - '0';
+        cout << "*";
+
+
+        cout << "\n" << u2 << ", make your move (1=Rock, 2=Scissors, 3=Paper): ";
+        cin >> user2_move;
+
+
+        if ((user1_move == 1 && user2_move == 2) ||
+            (user1_move == 2 && user2_move == 3) ||
+            (user1_move == 3 && user2_move == 1)) {
+            cout << u1 << " wins this round!\n";
+            user1score++;
+        } else if ((user2_move == 1 && user1_move == 2) ||
+                   (user2_move == 2 && user1_move == 3) ||
+                   (user2_move == 3 && user1_move == 1)) {
+            cout << u2 << " wins this round!\n";
+            user2score++;
+        } else if (user1_move == user2_move) {
+            cout << "Tie!\n";
+        } else {
+            cout << "Invalid move!\n";
         }
-        else if((comp_move==1 && user_move==1)||(comp_move==2 && user_move==2)||(comp_move==3 && user_move==13)){
-            cout<<"tie"<<endl;
-        }
-        else{
-            cout<<"invalid move";
-        }
-        if(user1score>=3){
-            cout<<"Congratulation u win "<<endl;
-        }else if(user2score>=3){
-        cout<<"Computer win u loose";
-        }
+    }
+
+
+    cout << "\nFinal Score: " << u1 << " = " << user1score << ", " << u2 << " = " << user2score << "\n";
+    if (user1score > user2score)
+        cout << "Congratulations " << u1 << ", you win!\n";
+    else if (user2score > user1score)
+        cout << "Congratulations " << u2 << ", you win!\n";
+    else
+        cout << "It's a tie!\n";
 }
-}ic_tac_toe() {
+void Tic_tac_toe() {
     system("cls");
     char board[3][3] = {
         {'1','2','3'},
@@ -297,6 +318,7 @@ break;
 case 'w':
 case 'W':
     WordPuzzleGame();
+    break;
     default:
         cout<<"\n invalid choice please try again"<<endl;
 }
@@ -350,6 +372,4 @@ cin>>choice;
 cout<<"Thank You for using my application "<<endl;
 
     return 0;}
-
-
 
