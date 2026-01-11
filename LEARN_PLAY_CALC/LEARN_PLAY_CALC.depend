@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1768134263 source:d:\game\learn_play_calc\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<ctime>
+
