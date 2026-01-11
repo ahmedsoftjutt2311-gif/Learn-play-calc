@@ -108,7 +108,7 @@ void rps_game(){
     char u1[20];
     char u2[20];
     int  user1_move,user2_move;
-    int users1core=0,user2score=0;
+    int user1score=0,user2score=0;
     cout<<"Enter player  1 name : "<<endl;
     cin.getline(u1,20);
         cout<<"Enter player  2 name : "<<endl;
@@ -119,9 +119,9 @@ void rps_game(){
         cin>>user1_move;
          cout<<"\n "<<u2<<" Make your move: '1' for rock '2' for scissor '3' for paper ";
         cin>>user2_move;
-       
+
         if((user1_move==1 && user2_move==2)||(user1_move==2 && user2_move==3)||(user1_move==3 && user2_move==1) ){
-      
+
           cout<<u1<<" good move "<<endl;
         user1score++;
         }else if((user2_move==1 && user1_move==2)||(user2_move==2 && user1_move==3)||(user2_move==3 && user1_move==1)){
@@ -140,8 +140,7 @@ void rps_game(){
         cout<<"Computer win u loose";
         }
 }
-}
-void Tic_tac_toe() {
+}ic_tac_toe() {
     system("cls");
     char board[3][3] = {
         {'1','2','3'},
@@ -351,5 +350,6 @@ cin>>choice;
 cout<<"Thank You for using my application "<<endl;
 
     return 0;}
+
 
 
